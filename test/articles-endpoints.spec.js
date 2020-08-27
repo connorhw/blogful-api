@@ -1,6 +1,7 @@
 const { expect } = require('chai')
 const knex = require('knex')
 const app = require('../src/app')
+const supertest = require('supertest')
 
 describe.only('Articles Endpoints', function() {
     let db
@@ -72,6 +73,19 @@ describe.only('Articles Endpoints', function() {
             .expect(200, expectedArticle)
         })
 
+    })
+})
+
+describe.only(`POST /articles`, () => {
+    it(`creates an article, resonding with 201 and the new article`, function() {
+        return supertest(app)
+            .post('/articles')
+            .send({
+                title: 'Test new article',
+                style: 'Listicle',
+                content: 'Test new article content...'
+            })
+            .expect(201)
     })
 })
 

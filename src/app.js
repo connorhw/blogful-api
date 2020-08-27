@@ -27,6 +27,11 @@ app.get('/articles', (req, res, next) => {
     })
     .catch(next) //errors get handled by our error-handler middleware, below
 })
+
+app.post('/articles', (req, res, next) => {
+  res.status(201).send('stuff')
+})
+
 app.get('/articles/:article_id', (req, res, next) => {
   //res.json({ 'requested_id': req.params.article_id, this: 'should fail' })
   const knexInstance = req.app.get('db')
