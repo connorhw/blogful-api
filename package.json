@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "blogful-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,7 +22,9 @@
     "helmet": "^3.22.0",
     "knex": "^0.21.2",
     "morgan": "^1.10.0",
-    "pg": "^8.3.0"
+    "pg": "^8.3.0",
+    "winston": "^3.3.3",
+    "xss": "^1.0.8"
   },
   "devDependencies": {
     "chai": "^4.2.0",
